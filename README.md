@@ -22,7 +22,7 @@ file.config的功能是记录TM的回滚日志
 
 registry.conf
 
-```json
+```
 registry {
   type = "eureka"
   # register.type使用eureka的配置如下
@@ -48,7 +48,7 @@ config {
 
 file.config
 
-```json
+```
 store {
   # 全局事务回滚日志保存方式
   mode = "db"
