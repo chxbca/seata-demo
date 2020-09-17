@@ -143,7 +143,7 @@ seata:
   use-jdk-proxy: false
   service:
     vgroup-mapping:
-      default: demo_tc # default是自定义的事务分组名称，fsp_tx是tc注册到注册中心的服务名称
+      default: demo_tc # default是自定义的事务分组名称，demo_tc是tc注册到注册中心的服务名称
     enable-degrade: false # 是否启用降级
     disable-global-transaction: false # 是否禁用全局事务
   config:
