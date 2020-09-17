@@ -1,0 +1,38 @@
+server:
+  port: 5002
+
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:5000/eureka/
+
+spring:
+  application:
+    name: product
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/product
+    username: root
+    password: xbc1997113
+seata:
+  enabled: true
+  application-id: ${spring.application.name} #服务名
+  tx-service-group: default # default是自定义的事务分组名称
+  enable-auto-data-source-proxy: true # 启用自动数据源代理
+  use-jdk-proxy: false
+  service:
+    vgroup-mapping:
+      default: demo_tc # default是自定义的事务分组名称，fsp_tx是tc注册到注册中心的服务名称
+    enable-degrade: false # 是否启用降级
+    disable-global-transaction: false # 是否禁用全局事务
+  config:
+    type: file # 配置中心为file模式
+  registry:
+    type: eureka # 注册中心为eureka
+    eureka:
+      weight: 1
+      service-url: http://127.0.0.1:5000/eureka/ # 注册中心地址
+management:
+  endpoint:
+    health:
+      show-details: always
